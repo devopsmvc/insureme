@@ -1,7 +1,5 @@
 package com.hdfc.insureme;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,22 +26,18 @@ public class PolicyController {
 	}
 	
 	
-	@GetMapping("/CreatePolicy")
+	@PostMapping("/CreatePolicy")
 	public Policy CreatePolicy() {
 		
 		return PolicyService.CreatePolicy();
 	}
 	
-	@GetMapping("/UpdatePolicy")
+	@PutMapping("/UpdatePolicy")
 	public Policy UpdatePolicy(@RequestBody Policy Policy) {
 		
 		return PolicyService.UpdatePolicy(Policy);
 	}
-	
-	@GetMapping("/ViewPolicy")
-	public List<Policy> ViewPolicy() {
-		return PolicyService.ViewPolicy();
-	}
+
 	
 	@GetMapping("/ViewPolicy/{PolicyID}")
 	public Policy ViewPolicyDetails(@PathVariable(value="PolicyID") int PolicyID) {
@@ -51,8 +45,8 @@ public class PolicyController {
 	}
 	
 	@DeleteMapping("/DeletePolicy/{PolicyID}")
-	public Policy DeletePolicyDetails(@PathVariable(value="PolicyID") int PolicyID) {
-		return PolicyService.DeletePolicy(PolicyID);
+	public void DeletePolicyDetails(@PathVariable(value="PolicyID") int PolicyID) {
+		PolicyService.DeletePolicy(PolicyID);
 	}
 
 
