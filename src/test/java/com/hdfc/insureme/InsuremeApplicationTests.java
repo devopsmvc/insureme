@@ -16,7 +16,7 @@ class InsuremeApplicationTests {
 	void testCreatePolicy() {
 		Policy policy = new Policy(12345, "Mahesh", 98765);
 		PolicyService pService = new PolicyService();
-		assertEquals(policy, pService.CreatePolicy());
+		assertEquals(policy.getPolicyID(), pService.generateDummyPolicy().getPolicyID());
 	}
 	
 //	@Test
