@@ -1,24 +1,23 @@
 package com.hdfc.insureme;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Policy {
 	
-	
 	@Id
-	private int PolicyID;
-	
-	private String PolicyName;
-	
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int PolicyID;	
+	private String PolicyName;	
 	private double PolicyNumber;
 	
 	
 	//Private //public //protected //default
 	
 	public Policy() {
-		
 		
 	}
 	
@@ -52,7 +51,5 @@ public class Policy {
 	public void setPolicyNumber(double PolicyNumber) {
 		this.PolicyNumber = PolicyNumber;
 	}
-	
-	
-	
+		
 }
