@@ -5,6 +5,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import io.restassured.http.Method;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+
 @SpringBootTest
 class InsuremeApplicationTests {
 
@@ -20,51 +26,35 @@ class InsuremeApplicationTests {
 	}
 	
 //	@Test
-//	public void testCreatePolicy() throws Exception {
-//	    Policy policy = new Policy();
-//	    policy.setPolicyName("Mahesh");
-//	    policy.setPolicyNumber(12345);
+//	void testCreatePolicy1() {
+//		RestAssured.baseURI="http://13.127.141.134:8082/CreatePolicy";
+//		RequestSpecification httpRequest = RestAssured.given();
+//		Response response =httpRequest.request(Method.POST);
+//		System.out.println(response.getStatusCode());
+//		assertEquals(response.statusCode(), 200);
+//				
+//	}
 //
-//	    ObjectMapper mapper = new ObjectMapper();
-//	    String json = mapper.writeValueAsString(policy);
-//
-//	    MockMvc.perform(post("/createPolicy")
-//	        .contentType(MediaType.APPLICATION_JSON)
-//	        .content(json))
-//	        .andExpect(status().isOk())
-//	        .andExpect(jsonPath("$.name", is("Test Policy")))
-//	        .andExpect(jsonPath("$.number", is(1000)));
+//	@Test
+//	void testGetEmployeeDetails() {
+//		RestAssured.baseURI="http://13.127.141.134:8082/ViewPolicy";
+//		RequestSpecification httpRequest = RestAssured.given();
+//		Response response =httpRequest.request(Method.GET,"/1");
+//		System.out.println(response.getStatusCode());
+//		assertEquals(response.statusCode(), 200);
+//				
 //	}
 //	
 //	@Test
-//	public void testUpdatePolicy() throws Exception {
-//	    Policy policy = new Policy();
-//	    policy.setName("Test Policy Updated");
-//	    policy.setAmount(2000);
+//	void testUpdateEmployeeDetails() {
+//		RestAssured.baseURI="http://13.127.141.134:8082/UpdatePolicy";
+//		RequestSpecification httpRequest = RestAssured.given();
+//		httpRequest.contentType(ContentType.JSON);
+//	    httpRequest.body(new Policy(10, "Doe", 5555));
+//		Response response =httpRequest.put("10");
+//		System.out.println(response.getStatusCode());
+//		assertEquals(response.statusCode(), 200);
+//				
+//	}
 //
-//	    ObjectMapper mapper = new ObjectMapper();
-//	    String json = mapper.writeValueAsString(policy);
-//
-//	    mockMvc.perform(put("/updatePolicy/1")
-//	        .contentType(MediaType.APPLICATION_JSON)
-//	        .content(json))
-//	        .andExpect(status().isOk())
-//	        .andExpect(jsonPath("$.name", is("Test Policy Updated")))
-//	        .andExpect(jsonPath("$.amount", is(2000)));
-//	}
-//	
-//	@Test
-//	public void testViewPolicy() throws Exception {
-//	    mockMvc.perform(get("/viewPolicy/1"))
-//	        .andExpect(status().isOk())
-//	        .andExpect(jsonPath("$.name", is("Test Policy")))
-//	        .andExpect(jsonPath("$.amount", is(1000)));
-//	}
-//	
-//	@Test
-//	public void testDeletePolicy() throws Exception {
-//	    mockMvc.perform(delete("/deletePolicy/1"))
-//	        .andExpect(status().isOk());
-//	}
-
 }

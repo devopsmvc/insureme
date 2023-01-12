@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head> 
+    <title>Getting Started: Serving Web Content</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1>INSURE ME</h1>
+    <body bgcolor="#3227225d">
+    <p><h3>Get your Insurance</h3> <a href="/greeting">here</a></p>
+    
+    
+   <div align="center">
+   
+   <a href="@{CreatePolicy}">CreatePolicy</a> |   
+   <a href="@{ViewPolicy}">ViewPolicy</a> |
+   <a href="@{UpdatePolicy}">UpdatePolicy</a> |
+   <a href="@{DeletePolicy}">DeletePolicy</a> | 
+   </div>
+   
+	<form action="/action_page.php">
+  		<h3>
+  		<label for="fname">First Name:</label>
+  		<input type="text" id="fname" name="fname"><br><br>
+  		<label for="lname">Last Name:</label>
+  		<input type="text" id="lname" name="lname"><br><br>
+  		<label for="lname">Email ID:</label>
+  		<input type="text" id="email" name="email"><br><br>
+  		<label for="lname">Contact Number:</label>
+  		<input type="text" id="contact" name="contact"><br><br>
+  		<input type="submit" value="Submit">
+  		</h3>
+	</form>
+	
+<!-- 	<form action="submit_handler.php" method="post">
+  <label for="input">Enter your text:</label>
+  <input type="text" id="input" name="input">
+  <br>
+  <input type="submit" value="Submit" onclick="alert('done')">
+</form> -->
+	
+</body>
+</html>
