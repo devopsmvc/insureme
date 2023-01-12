@@ -18,7 +18,7 @@ node{
     stage('git code checkout'){
         try{
             echo 'checkout the code from git repository'
-            git 'https://github.com/devopsmvc/insureme.git'
+            git branch: 'main', url: 'https://github.com/devopsmvc/insureme.git'
         }
         catch(Exception e){
             echo 'Exception occured in Git Code Checkout Stage'
