@@ -38,7 +38,7 @@ class InsuremeApplicationTests {
 	void testGetEmployeeDetails() {
 		RestAssured.baseURI="http://65.2.123.255:8082/ViewPolicy";
 		RequestSpecification httpRequest = RestAssured.given();
-		Response response =httpRequest.request(Method.GET,"/1");
+		Response response =httpRequest.request(Method.GET,"/12345");
 		System.out.println(response.getStatusCode());
 		assertEquals(response.statusCode(), 200);
 				
