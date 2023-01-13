@@ -25,25 +25,25 @@ class InsuremeApplicationTests {
 		assertEquals(policy.getPolicyID(), pService.generateDummyPolicy().getPolicyID());
 	}
 	
-//	@Test
-//	void testCreatePolicy1() {
-//		RestAssured.baseURI="http://13.127.141.134:8082/CreatePolicy";
-//		RequestSpecification httpRequest = RestAssured.given();
-//		Response response =httpRequest.request(Method.POST);
-//		System.out.println(response.getStatusCode());
-//		assertEquals(response.statusCode(), 200);
-//				
-//	}
-//
-//	@Test
-//	void testGetEmployeeDetails() {
-//		RestAssured.baseURI="http://13.127.141.134:8082/ViewPolicy";
-//		RequestSpecification httpRequest = RestAssured.given();
-//		Response response =httpRequest.request(Method.GET,"/1");
-//		System.out.println(response.getStatusCode());
-//		assertEquals(response.statusCode(), 200);
-//				
-//	}
+	@Test
+	void testCreatePolicy1() {
+		RestAssured.baseURI="http://65.2.123.255:8082/CreatePolicy";
+		RequestSpecification httpRequest = RestAssured.given();
+		Response response =httpRequest.request(Method.POST);
+		System.out.println(response.getStatusCode());
+		assertEquals(response.statusCode(), 200);
+				
+	}
+
+	@Test
+	void testGetEmployeeDetails() {
+		RestAssured.baseURI="http://65.2.123.255:8082/ViewPolicy";
+		RequestSpecification httpRequest = RestAssured.given();
+		Response response =httpRequest.request(Method.GET,"/1");
+		System.out.println(response.getStatusCode());
+		assertEquals(response.statusCode(), 200);
+				
+	}
 //	
 //	@Test
 //	void testUpdateEmployeeDetails() {
