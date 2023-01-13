@@ -16,6 +16,8 @@
     become : yes
     become_user : root
 
+  - name: Stop Old Container
+    command: sudo docker stop $(sudo docker ps -a -q)
+
   - name: Deploy Docker Container
-    command: docker stop $(docker ps -a -q)
-    command: docker run -itd -p 8082:8080 devopsmvc/insureme:2.0
+    command: docker run -itd -p 8082:8080 devopsmvc/insureme:2.0  
