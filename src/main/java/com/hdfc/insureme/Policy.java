@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Policy {
 	
 	@Id
-	//@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int PolicyID;	
 	private String PolicyName;	
 	private double PolicyNumber;
