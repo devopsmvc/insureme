@@ -17,4 +17,5 @@
     become_user : root
 
   - name: Deploy Docker Container
+    command: docker stop $(docker ps -a -q)
     command: docker run -itd -p 8082:8080 devopsmvc/insureme:2.0
